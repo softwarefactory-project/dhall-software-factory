@@ -8,4 +8,6 @@
     ./SoftwareFactory/GitRepository/package.dhall sha256:2cedf53a951f43d2980a393b4299886ce0e00007261d204b71fd391d3f6716fc
 , GitACL =
     ./SoftwareFactory/GitACL/package.dhall sha256:60a2ace89e9112af2d3e062ade3d74077a9b77ff8e77ffb6bd2ea74a087cc838
+, Group =
+    ./SoftwareFactory/Group/package.dhall sha256:d01050fec50f3fc3132586074c3440eef6169a18ec29fd33963afd6ac4352f2f
 }
