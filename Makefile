@@ -1,7 +1,7 @@
 ci: format freeze
 
 format:
-	@find . -name "*.dhall" -exec dhall --ascii format --inplace {} \;
+	@find . -name "*.dhall" -exec dhall format --inplace {} \;
 
 freeze:
 	@dhall freeze --all --inplace package.dhall

@@ -1,1 +1,5 @@
-{ Type = ./Type.dhall, default = ./default.dhall, getName = ./getName.dhall }
+{ Type = ./Type.dhall
+, default = ./default.dhall
+, mkSourceRepository = ./mkSourceRepository.dhall
+, mkProject = ./mkProject.dhall
+}
