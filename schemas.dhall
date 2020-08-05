@@ -10,4 +10,6 @@
     ./SoftwareFactory/GitACL/package.dhall sha256:60a2ace89e9112af2d3e062ade3d74077a9b77ff8e77ffb6bd2ea74a087cc838
 , Group =
     ./SoftwareFactory/Group/package.dhall sha256:d01050fec50f3fc3132586074c3440eef6169a18ec29fd33963afd6ac4352f2f
+, Connection =
+    ./SoftwareFactory/Connection/package.dhall sha256:35e4fe93e955192bd576c06e67eab28b17f9a1dffa41b7505bb879edbd54d38c
 }
