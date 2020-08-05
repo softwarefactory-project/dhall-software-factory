@@ -12,4 +12,6 @@
     ./SoftwareFactory/Group/package.dhall sha256:d01050fec50f3fc3132586074c3440eef6169a18ec29fd33963afd6ac4352f2f
 , Connection =
     ./SoftwareFactory/Connection/package.dhall sha256:35e4fe93e955192bd576c06e67eab28b17f9a1dffa41b7505bb879edbd54d38c
+, Tenant =
+    ./SoftwareFactory/Tenant/package.dhall sha256:48c52c02410a6ae3405d387b6813817f82ee969bfd9360000de3aa83bc2cee12
 }

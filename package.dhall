@@ -1,3 +1,3 @@
 --| The dhall-software-factory entry point
 
-./schemas.dhall sha256:9acafcb3442dee03edadca59bcd289b33c6c7f90d01d136e2846728499e66e2c
+./schemas.dhall sha256:df5722721ea80f7880b1c33b6bd8e63eb9437007df915dd5e7c22dffd477ff1a
