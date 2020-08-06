@@ -1,10 +1,12 @@
-let SFResources = env:DHALL_SOFTWARE_FACTORY ? ../package.dhall
+let SoftwareFactory = ../package.dhall
+
+let SFResources = SoftwareFactory.Resources
 
 let mkGitRepository = SFResources.GitRepository.mkGitRepository
 
 let mkGroup = SFResources.Group.mkGroup
 
-let mkGitACL = SFResources.GitACL.mkgitACL
+let mkGitACL = SFResources.GitACL.mkGitACL
 
 let mkProject = SFResources.Project.mkProject
 
@@ -79,7 +81,7 @@ let connections =
         ]
 
 let resources =
-      SFResources.Resources::{
+      SFResources::{
       , repos = Some repos
       , groups = Some groups
       , acls = Some acls
