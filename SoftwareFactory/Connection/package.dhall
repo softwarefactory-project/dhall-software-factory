@@ -1,5 +1,5 @@
 { Type = ./Type.dhall
 , default = ./default.dhall
-, mkConnection = ./mkConnection.dhall
+, Entry = ./Entry.dhall
 , pack = ./pack.dhall
 }

@@ -1,7 +1,9 @@
 --| The dhall-software-factory entry point
 
 { Connection =
-    ./SoftwareFactory/Connection/package.dhall sha256:68dc73564718025ae8dbdcc0f04f2b5e1560063f2818b7f7c2e5c13198e20a9b
+    ./SoftwareFactory/Connection/package.dhall sha256:3a57414af11c000a638bede3f245848eea2e91143a5b24d2783ab502973893be
+, ConnectionType =
+    ./SoftwareFactory/ConnectionType/package.dhall sha256:917a86eb8354ccff50a0d559f0b4ced67ca690a5c5563dcdaa362e9800886fcd
 , GitACL =
     ./SoftwareFactory/GitACL/package.dhall sha256:60a2ace89e9112af2d3e062ade3d74077a9b77ff8e77ffb6bd2ea74a087cc838
 , GitRepository =
@@ -11,7 +13,7 @@
 , Project =
     ./SoftwareFactory/Project/package.dhall sha256:e41ec00eac35873f43b902f9570cb2557102e3c195fcba3c0ad684c7abea3c59
 , Resources =
-    ./SoftwareFactory/Resources/package.dhall sha256:8ebb16ed07bfd7b690ea0f7b897776e87c7c6915635de193e5be986a30b1de1d
+    ./SoftwareFactory/Resources/package.dhall sha256:c8b826257358a68bab53d2c1240e01302c87e4e60039336372f6b4b3d432e875
 , SourceRepository =
     ./SoftwareFactory/SourceRepository/package.dhall sha256:5faec3802f34f675f19970391182850863791ce84af13f0b7c0a480782860ba8
 , SourceRepositoryOptions =

@@ -1,4 +1,4 @@
-let SFResources = env:DHALL_ZUUL ? ../package.dhall
+let SFResources = env:DHALL_SOFTWARE_FACTORY ? ../package.dhall
 
 let mkGitRepository = SFResources.GitRepository.mkGitRepository
 
@@ -70,10 +70,12 @@ let acl1 =
 
 let acls = SFResources.GitACL.pack [ acl1 ]
 
+let gerrit = SFResources.ConnectionType.gerrit
+
 let connections =
       SFResources.Connection.pack
-        [ SFResources.Connection::{ name = "A connection 1", type = "gerrit" }
-        , SFResources.Connection::{ name = "A connection 2", type = "gerrit" }
+        [ SFResources.Connection::{ name = "A connection 1", type = gerrit }
+        , SFResources.Connection::{ name = "A connection 2", type = gerrit }
         ]
 
 let resources =

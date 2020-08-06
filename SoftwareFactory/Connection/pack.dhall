@@ -1,16 +1,19 @@
-let Prelude =
-        env:DHALL_PRELUDE
-      ? https://raw.githubusercontent.com/dhall-lang/dhall-lang/v17.0.0/Prelude/package.dhall sha256:10db3c919c25e9046833df897a8ffe2701dc390fa0893d958c3430524be5a43e
-      ? https://raw.githubusercontent.com/dhall-lang/dhall-lang/v17.0.0/Prelude/package.dhall
+let Prelude = ../../Prelude.dhall
 
 let List/map = Prelude.List.map
 
-let pack =
-      λ(acls : List ./Type.dhall) →
-        List/map
-          ./Type.dhall
-          (Prelude.Map.Type Text ./Type.dhall)
-          ./mkConnection.dhall
-          acls
+let Connection = ./schema.dhall
+
+let pack = ../packer.dhall Connection.Type ./Entry.dhall
+
+let example0 =
+      let cnx1 =
+            Connection::{
+            , name = "a-connection2"
+            , base-url = Some "https://review.opendev.org"
+            , type = (../ConnectionType/package.dhall).gerrit
+            }
+
+      in  assert : pack [ cnx1 ] ≡ toMap { a-connection2 = cnx1 }
 
 in  pack

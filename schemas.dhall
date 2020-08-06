@@ -11,9 +11,9 @@
 , Group =
     ./SoftwareFactory/Group/package.dhall sha256:d01050fec50f3fc3132586074c3440eef6169a18ec29fd33963afd6ac4352f2f
 , Connection =
-    ./SoftwareFactory/Connection/package.dhall sha256:68dc73564718025ae8dbdcc0f04f2b5e1560063f2818b7f7c2e5c13198e20a9b
+    ./SoftwareFactory/Connection/package.dhall sha256:3a57414af11c000a638bede3f245848eea2e91143a5b24d2783ab502973893be
 , Tenant =
     ./SoftwareFactory/Tenant/package.dhall sha256:48c52c02410a6ae3405d387b6813817f82ee969bfd9360000de3aa83bc2cee12
 , Resources =
-    ./SoftwareFactory/Resources/package.dhall sha256:8ebb16ed07bfd7b690ea0f7b897776e87c7c6915635de193e5be986a30b1de1d
+    ./SoftwareFactory/Resources/package.dhall sha256:c8b826257358a68bab53d2c1240e01302c87e4e60039336372f6b4b3d432e875
 }
