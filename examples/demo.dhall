@@ -29,11 +29,10 @@ let source-repos =
       ]
 
 let repos =
-      [ mkGitRepository
-          SFResources.GitRepository::{ name = "repo1", acl = Some "acl1" }
-      , mkGitRepository
-          SFResources.GitRepository::{ name = "repo2", acl = Some "acl1" }
-      ]
+      SFResources.GitRepository.pack
+        [ SFResources.GitRepository::{ name = "repo1", acl = Some "acl1" }
+        , SFResources.GitRepository::{ name = "repo2", acl = Some "acl1" }
+        ]
 
 let group1 =
       SFResources.Group::{ name = "group1", description = Some "The group 1" }
@@ -71,6 +70,12 @@ let acl1 =
 
 let acls = SFResources.GitACL.pack [ acl1 ]
 
+let connections =
+      SFResources.Connection.pack
+        [ SFResources.Connection::{ name = "A connection 1", type = "gerrit" }
+        , SFResources.Connection::{ name = "A connection 2", type = "gerrit" }
+        ]
+
 let resources =
       SFResources.Resources::{
       , repos = Some repos
@@ -78,6 +83,7 @@ let resources =
       , acls = Some acls
       , projects = Some projects
       , tenants = Some tenants
+      , connections = Some connections
       }
 
 in  { resources }
