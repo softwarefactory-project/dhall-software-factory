@@ -6,7 +6,6 @@
 , Project = ./Project/package.dhall
 , Resources = ./Resources/package.dhall
 , SourceRepository = ./SourceRepository/package.dhall
-, SourceRepositoryOptions = ./SourceRepositoryOptions/package.dhall
 , Tenant = ./Tenant/package.dhall
 , TenantOptions = ./TenantOptions/package.dhall
 }
