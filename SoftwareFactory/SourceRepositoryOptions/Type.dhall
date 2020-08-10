@@ -1,4 +1,4 @@
-let Prelude = ../../Prelude.dhall
+let Prelude = ../Prelude.dhall
 
 let SourceRepositoryOptionsValueType =
       < TextValue : Text | ListValue : List Text | BoolValue : Bool >
