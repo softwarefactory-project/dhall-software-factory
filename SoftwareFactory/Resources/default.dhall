@@ -5,5 +5,5 @@ in  { tenants = None (Prelude.Map.Type Text ./Tenant/Type.dhall)
     , repos = None (Prelude.Map.Type Text ./GitRepository/Type.dhall)
     , acls = None (Prelude.Map.Type Text ./GitACL/Type.dhall)
     , groups = None (Prelude.Map.Type Text ./Group/Type.dhall)
-    , projects = None (List (Prelude.Map.Type Text ./Project/Type.dhall))
+    , projects = None (Prelude.Map.Type Text ./Project/Type.dhall)
     }

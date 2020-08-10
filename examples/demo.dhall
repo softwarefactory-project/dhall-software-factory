@@ -2,8 +2,6 @@ let SoftwareFactory = ../package.dhall
 
 let SFResources = SoftwareFactory.Resources
 
-let mkProject = SFResources.Project.mkProject
-
 let mkSourceRepository = SFResources.Project.mkSourceRepository
 
 let SourceRepository = SFResources.SourceRepository
@@ -48,13 +46,13 @@ let tenants =
         ]
 
 let projects =
-      [ mkProject
-          SFResources.Project::{
+      SFResources.Project.pack
+        [ SFResources.Project::{
           , name = "demo-project"
           , connection = "gerrit"
           , source-repositories = Some source-repos
           }
-      ]
+        ]
 
 let acls =
       SFResources.GitACL.pack

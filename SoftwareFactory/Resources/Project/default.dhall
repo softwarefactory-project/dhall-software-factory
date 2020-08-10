@@ -1,7 +1,5 @@
-{ name = Text
-, description = None Text
+{ description = None Text
 , tenant = None Text
-, connection = Text
 , website = None Text
 , documentation = None Text
 , issue-tracker-url = None Text

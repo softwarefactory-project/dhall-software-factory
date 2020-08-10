@@ -1,15 +1,17 @@
-{ Type =
+{ Entry =
+    ./Entry.dhall sha256:af8b7435c68e85eb8d9b182a8db0be6f60e9f8602707dd714b7351c85c2d89c9
+, Type =
     ./Type.dhall sha256:b988e105257fa15811748052eefcf41ffabe37c859139ee92bf1309aab4d7cb8
 , default =
-    ./default.dhall sha256:e8f674ce5348e283553c237de2652ae955f2897211adca67de275d778d37e149
+    ./default.dhall sha256:de951d0474d406282a41034b0bcf385feb7189ebf3cc4ddc8af64e0ab9e70c13
 , example =
-    ./example.dhall sha256:fe7d8eff46c0d6d59d30ad4712fb4008be605caa40c1d1697f5f095b75d2e532
-, mkProject =
-    ./mkProject.dhall sha256:1ea0339cfde856e228cb249b5f0c2f31684747cc5158384d27ce88da8d45669a
+    ./example.dhall sha256:8fef4de06d50236c27eebbba867b83552eed9b52b3050f2ede7e7cf0eebbd9c6
 , mkSourceRepository =
     ./mkSourceRepository.dhall sha256:baf35745638b4fb705ab05255b1b68b0865941d1960c50922fe1c4ae212a1fc9
+, pack =
+    ./pack.dhall sha256:fac6f3c16edd68bb4c7f0098ff4d68930a0628ed404eaa061124b6cc551df855
 , schema =
-    ./schema.dhall sha256:7167b7dad31db18ec988ece5ccddb7e32e4dd397952bcb4093506eb920224093
+    ./schema.dhall sha256:079974fd227d60a6af1ec906532391a2c5aa47d14ba08198cebae161e2a3ac57
 , sourceRepository =
     ./sourceRepository.dhall sha256:d852e4e5e5ab2a284d1724fa1e70feb4098d4f076683fba3c4b29631ccf920aa
 }

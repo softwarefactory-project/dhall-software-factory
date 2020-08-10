@@ -2,8 +2,6 @@ let Project = ./schema.dhall
 
 let mkSourceRepository = ./mkSourceRepository.dhall
 
-let mkProject = ./mkProject.dhall
-
 let a-src-repo-with-options =
       mkSourceRepository
         [ { mapKey = "a-src-repo-with-options"
@@ -17,7 +15,7 @@ let a-src-repo-with-options =
 
 let a-src-repo = (../SourceRepository/Type.dhall).Name "a-src-repo"
 
-let example0 =
+let example =
       Project::{
       , name = "a-project"
       , description = Some "Description"
@@ -25,4 +23,4 @@ let example0 =
       , source-repositories = Some [ a-src-repo-with-options, a-src-repo ]
       }
 
-in  mkProject example0
+in example

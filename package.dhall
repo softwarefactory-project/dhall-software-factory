@@ -1,1 +1,1 @@
-./SoftwareFactory/package.dhall sha256:13e8dcaabb7d7676abb82e02aa5167417def50e0da55f13bc77fc90cddc21bd2
+./SoftwareFactory/package.dhall sha256:1c1f64eb6392da73df25c3a2f0d8a4daba39d332840abcc7369edf0dbdea2800
