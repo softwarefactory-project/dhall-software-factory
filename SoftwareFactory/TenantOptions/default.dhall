@@ -1,1 +1,1 @@
-{ zuul/web-url = None Text, zuul/report-build-page = None Bool }
+{ zuul/report-build-page = None Bool, zuul/web-url = None Text }

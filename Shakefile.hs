@@ -12,5 +12,6 @@ main = shakeMain $ do
   "README.md" %> dhallReadmeAction
   "package.dhall" %> dhallTopLevelPackageAction "./SoftwareFactory/package.dhall"
   "//package.dhall" %> dhallPackageAction
-  dhallDocsRules "dhall-containerfile"
+  "//default.dhall" %> dhallDefaultAction
+  dhallDocsRules "dhall-software-factory"
   cleanRules
