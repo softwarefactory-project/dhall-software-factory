@@ -1,6 +1,6 @@
 let SoftwareFactory = ../package.dhall
 
-let SFResources = SoftwareFactory.Resources
+let SFResources = SoftwareFactory.Legacy
 
 let mkSourceRepository = SFResources.Project.mkSourceRepository
 

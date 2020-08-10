@@ -3,11 +3,60 @@
 `dhall-software-factory` contains [Dhall][dhall-lang] bindings to [Software Factory][sf],
 so you can generate software factory configuration from Dhall expressions.
 
+## Demo resources
+
 ```
--- ./examples/demo.dhall
+-- ./examples/resources.dhall
 let SoftwareFactory = ../package.dhall
 
-let SFResources = SoftwareFactory.Resources
+let project = SoftwareFactory.Project::{ name = "tdpw" }
+
+let tenant =
+      SoftwareFactory.Tenant::{
+      , name = "fedora"
+      , url = "https://fedora.sf.io"
+      , tenant-options = Some SoftwareFactory.TenantOptions::{
+        , zuul/web-url = Some "https://fedora.sf.io/zuul"
+        }
+      }
+
+in  SoftwareFactory.Resources::{ projects = [ project ], tenants = [ tenant ] }
+
+```
+
+Result in resources engine compatible schema:
+
+```
+# dhall-to-yaml <<< '(./package.dhall).Resources.renderManagesf ./examples/resources.dhall'
+resources:
+  projects:
+    tdpw:
+      name: tdpw
+  tenants:
+    fedora:
+      name: fedora
+      tenant-options:
+        zuul/web-url: https://fedora.sf.io/zuul
+      url: https://fedora.sf.io
+
+```
+
+And in zuul configuration:
+```
+# dhall-to-yaml <<< '(./package.dhall).Resources.renderZuul ./examples/resources.dhall'
+
+- tenant:
+    name: fedora
+
+```
+
+
+
+```
+-- ./examples/legacy.dhall
+let SoftwareFactory = ../package.dhall
+
+let SFResources = SoftwareFactory.Legacy
 
 let mkSourceRepository = SFResources.Project.mkSourceRepository
 
@@ -101,7 +150,7 @@ in  { resources }
 ```
 
 ```yaml
-# dhall-to-yaml --file ./examples/demo.dhall
+# dhall-to-yaml --file ./examples/legacy.dhall
 resources:
   acls:
     acl1:
