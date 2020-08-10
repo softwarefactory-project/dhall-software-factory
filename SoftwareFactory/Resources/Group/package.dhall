@@ -1,11 +1,6 @@
-{ Entry =
-    ./Entry.dhall sha256:e1839d5283ca2e10f12607cb3878f89f3ead1594875f82dea53869f8de769ddd
-, Type =
-    ./Type.dhall sha256:9419f13f434d05e03bf5666b61b4ca11609a30b2a9212294d126fa9873cd8cc2
-, default =
-    ./default.dhall sha256:edb109c82740618d54e0499718173ec96d05117c9f517a663d0ebda1a481e133
-, pack =
-    ./pack.dhall sha256:9946746757ce977844041c05a0d161fa8872352ec3b5f74d0b052605413611d9
-, schema =
-    ./schema.dhall sha256:f13895198496e0a82fc65c80e0445e8add1aedd8fc8830ab1972349560b36f58
+{ Entry = ./Entry.dhall
+, Type = ./Type.dhall
+, default = ./default.dhall
+, pack = ./pack.dhall
+, schema = ./schema.dhall
 }
