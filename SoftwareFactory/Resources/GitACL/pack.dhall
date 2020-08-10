@@ -1,16 +1,19 @@
-let Prelude =
-        env:DHALL_PRELUDE
-      ? https://raw.githubusercontent.com/dhall-lang/dhall-lang/v17.0.0/Prelude/package.dhall sha256:10db3c919c25e9046833df897a8ffe2701dc390fa0893d958c3430524be5a43e
-      ? https://raw.githubusercontent.com/dhall-lang/dhall-lang/v17.0.0/Prelude/package.dhall
+let Prelude = ../../Prelude.dhall
 
 let List/map = Prelude.List.map
 
-let pack =
-      λ(acls : List ./Type.dhall) →
-        List/map
-          ./Type.dhall
-          (Prelude.Map.Type Text ./Type.dhall)
-          ./mkGitACL.dhall
-          acls
+let GitACL = ./schema.dhall
+
+let pack = ../packer.dhall GitACL.Type ./Entry.dhall
+
+let example0 =
+      let acl1 =
+            GitACL::{
+            , name = "acl-1"
+            , file = "ACL data"
+            , groups = Some [ "Jane", "John" ]
+            }
+
+      in  assert : pack [ acl1 ] ≡ toMap { acl-1 = acl1 }
 
 in  pack

@@ -6,8 +6,6 @@ let mkGitRepository = SFResources.GitRepository.mkGitRepository
 
 let mkGroup = SFResources.Group.mkGroup
 
-let mkGitACL = SFResources.GitACL.mkGitACL
-
 let mkProject = SFResources.Project.mkProject
 
 let mkTenant = SFResources.Tenant.mkTenant
@@ -61,16 +59,16 @@ let projects =
           }
       ]
 
-let acl1 =
-      SFResources.GitACL::{
-      , name = "acl1"
-      , file =
-          ''
-          this is a
-          acl''
-      }
-
-let acls = SFResources.GitACL.pack [ acl1 ]
+let acls =
+      SFResources.GitACL.pack
+        [ SFResources.GitACL::{
+          , name = "acl1"
+          , file =
+              ''
+              this is a
+              acl''
+          }
+        ]
 
 let gerrit = SFResources.ConnectionType.gerrit
 
