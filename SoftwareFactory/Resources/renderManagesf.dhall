@@ -9,53 +9,45 @@ let SoftwareFactory =
 
 let Prelude = ../Prelude.dhall
 
-let packer
-    : ∀(a : Type) →
-      ∀(f : a → Prelude.Map.Entry Text a) →
-      ∀(l : List a) →
+let mkMap
+    : forall (a : Type) ->
+      forall (name : a -> Text) ->
+      forall (l : List a) ->
         Prelude.Map.Type Text a
-    = λ(a : Type) →
-      λ(f : a → Prelude.Map.Entry Text a) →
-      λ(l : List a) →
-        Prelude.List.map a (Prelude.Map.Entry Text a) f l
+    = \(a : Type) ->
+      \(name : a -> Text) ->
+        Prelude.List.map
+          a
+          (Prelude.Map.Entry Text a)
+          (\(obj : a) -> { mapKey = name obj, mapValue = obj })
 
 let render =
-      λ(resources : SoftwareFactory.Resources.Type) →
+      \(resources : SoftwareFactory.Resources.Type) ->
         { resources =
           { projects =
-              packer
+              mkMap
                 SoftwareFactory.Project.Type
-                ( λ(project : SoftwareFactory.Project.Type) →
-                    { mapKey = project.name, mapValue = project }
-                )
+                SoftwareFactory.Project.Name
                 resources.projects
           , tenants =
-              packer
+              mkMap
                 SoftwareFactory.Tenant.Type
-                ( λ(obj : SoftwareFactory.Tenant.Type) →
-                    { mapKey = obj.name, mapValue = obj }
-                )
+                SoftwareFactory.Tenant.Name
                 resources.tenants
           , repos =
-              packer
+              mkMap
                 SoftwareFactory.GitRepository.Type
-                ( λ(obj : SoftwareFactory.GitRepository.Type) →
-                    { mapKey = obj.name, mapValue = obj }
-                )
+                SoftwareFactory.GitRepository.Name
                 resources.repos
           , groups =
-              packer
+              mkMap
                 SoftwareFactory.Group.Type
-                ( λ(obj : SoftwareFactory.Group.Type) →
-                    { mapKey = obj.name, mapValue = obj }
-                )
+                SoftwareFactory.Group.Name
                 resources.groups
           , acls =
-              packer
+              mkMap
                 SoftwareFactory.GitACL.Type
-                ( λ(obj : SoftwareFactory.GitACL.Type) →
-                    { mapKey = obj.name, mapValue = obj }
-                )
+                SoftwareFactory.GitACL.Name
                 resources.acls
           }
         }
