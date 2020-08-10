@@ -2,8 +2,6 @@ let SoftwareFactory = ../package.dhall
 
 let SFResources = SoftwareFactory.Resources
 
-let mkGroup = SFResources.Group.mkGroup
-
 let mkProject = SFResources.Project.mkProject
 
 let mkSourceRepository = SFResources.Project.mkSourceRepository
@@ -30,10 +28,13 @@ let repos =
         , SFResources.GitRepository::{ name = "repo2", acl = Some "acl1" }
         ]
 
-let group1 =
-      SFResources.Group::{ name = "group1", description = Some "The group 1" }
-
-let groups = SFResources.Group.pack [ group1 ]
+let groups =
+      SFResources.Group.pack
+        [ SFResources.Group::{
+          , name = "group1"
+          , description = Some "The group 1"
+          }
+        ]
 
 let tenants =
       SFResources.Tenant.pack

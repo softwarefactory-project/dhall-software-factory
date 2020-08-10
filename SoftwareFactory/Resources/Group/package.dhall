@@ -1,13 +1,11 @@
-{ Type =
+{ Entry =
+    ./Entry.dhall sha256:e1839d5283ca2e10f12607cb3878f89f3ead1594875f82dea53869f8de769ddd
+, Type =
     ./Type.dhall sha256:9419f13f434d05e03bf5666b61b4ca11609a30b2a9212294d126fa9873cd8cc2
 , default =
-    ./default.dhall sha256:eb717f86dcd6246b791f2458b426dd93087b5fe4c34765439ee7a3ec941c65a0
-, example =
-    ./example.dhall sha256:86e8ade7546a25e27d53306444d2609320953fbe63e2f6ed45d85ced363fb5b1
-, mkGroup =
-    ./mkGroup.dhall sha256:187ab376d532a3ad4b0b46dd20c9f93202a42ff1b6f8dd95ab05b1af1348a2cf
+    ./default.dhall sha256:edb109c82740618d54e0499718173ec96d05117c9f517a663d0ebda1a481e133
 , pack =
-    ./pack.dhall sha256:b81f26e6e9e5938a4297df868f84992b93d65fb72b9c85fd93399faa1d76cc73
+    ./pack.dhall sha256:9946746757ce977844041c05a0d161fa8872352ec3b5f74d0b052605413611d9
 , schema =
-    ./schema.dhall sha256:a34a4fbb91aba8c720ff24a46ee3007b304a5896b38c6784563b8af2083cbd39
+    ./schema.dhall sha256:f13895198496e0a82fc65c80e0445e8add1aedd8fc8830ab1972349560b36f58
 }
