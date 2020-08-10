@@ -1,0 +1,1 @@
+< TextValue : Text | BoolValue : Bool >

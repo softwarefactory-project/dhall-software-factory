@@ -1,3 +1,3 @@
 { Resources =
-    ./Resources/package.dhall sha256:4d7f3503ae5dd811688469bee0beed88590fdfe238d248766f39447d48a4ca63
+    ./Resources/package.dhall sha256:37f7d0dcb02494eb4485a32ca3a724d30e27801d06b17c299d458fe6c0749ac9
 }

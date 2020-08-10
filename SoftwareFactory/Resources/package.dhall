@@ -1,7 +1,7 @@
 { Type =
-    ./Type.dhall sha256:887332e251f2751db6be13cf275024883fb1097160dc1fc34bd3b362d8c7fb0e
+    ./Type.dhall sha256:e61aae242265aa09c180515cfc3b3d243e0dbc72b3f6137e24895a709c26a3b4
 , default =
-    ./default.dhall sha256:d00dc3c7d906900d4cd79b5f435d851f4967ea983c281952fb91d3f5159d5122
+    ./default.dhall sha256:511ffce589c02dbf5ae9bc9881696a70b67fe5c036f4d1ce0aa59429f696ed0f
 , packer =
     ./packer.dhall sha256:6c8bfa2aac2dc7cb358f033e8544b3b00e6cdcd2c8daa55bb87d073e27c9c327
 , Connection =
@@ -21,5 +21,9 @@
 , SourceRepositoryOptions =
     ./SourceRepositoryOptions/package.dhall sha256:98722c81ee078e590b0ab1c8d516b394a07b93f0cde13151ba8f00becb6b6c44
 , Tenant =
-    ./Tenant/package.dhall sha256:ccf55e9ab6c6a415b3429a5530d9328fc5ceb4d1ad357371aafa82ab06c7f42a
+    ./Tenant/package.dhall sha256:c3c8087b18e2d9cf3163642a6ecb213cd3d42aa5938d877c8bd7510ab2377f8b
+, TenantOptions =
+    ./TenantOptions/package.dhall sha256:589b3ac5e22d73dec333ac248070a94506e1290760785b529e3a1c795c21506f
+, TenantOptionsValue =
+    ./TenantOptionsValue/package.dhall sha256:b544e46f2b30169cc103afe830a140eaa746043f4fea2241ebc5ef76524e51f8
 }

@@ -8,6 +8,8 @@ let SourceRepository = SFResources.SourceRepository
 
 let SourceRepositoryOptions = SFResources.SourceRepositoryOptions
 
+let TenantOptions = SFResources.TenantOptions
+
 let source-repos =
       [ SourceRepository.Type.Name "repo1"
       , mkSourceRepository
@@ -41,7 +43,11 @@ let tenants =
           , url = "https://softwarefactory-project.io/manage"
           , description = Some "The local tenant"
           , tenant-options = Some
-            [ { mapKey = "zuul/report-build-page", mapValue = "True" } ]
+              ( SFResources.TenantOptions.pack
+                  [ TenantOptions.Type.zuul/report-build-page True
+                  , TenantOptions.Type.zuul/web-root "https://test.com"
+                  ]
+              )
           }
         ]
 
