@@ -6,8 +6,6 @@ let mkGroup = SFResources.Group.mkGroup
 
 let mkProject = SFResources.Project.mkProject
 
-let mkTenant = SFResources.Tenant.mkTenant
-
 let mkSourceRepository = SFResources.Project.mkSourceRepository
 
 let SourceRepository = SFResources.SourceRepository
@@ -38,15 +36,15 @@ let group1 =
 let groups = SFResources.Group.pack [ group1 ]
 
 let tenants =
-      [ mkTenant
-          SFResources.Tenant::{
+      SFResources.Tenant.pack
+        [ SFResources.Tenant::{
           , name = "local"
           , url = "https://softwarefactory-project.io/manage"
           , description = Some "The local tenant"
           , tenant-options = Some
             [ { mapKey = "zuul/report-build-page", mapValue = "True" } ]
           }
-      ]
+        ]
 
 let projects =
       [ mkProject
