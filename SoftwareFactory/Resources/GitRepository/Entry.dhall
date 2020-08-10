@@ -1,17 +1,15 @@
-let Prelude = ../../Prelude.dhall
-
 let GitRepository = ./schema.dhall
 
-let pack = ../packer.dhall GitRepository.Type ./Entry.dhall
+let Entry = λ(repo : ./Type.dhall) → { mapKey = repo.name, mapValue = repo }
 
 let example0 =
-      let repo1 =
+      let repo =
             GitRepository::{
             , name = "a-repo"
             , description = Some "A git repository"
             , branches = Some [ "master", "stable/1.0" ]
             }
 
-      in  assert : pack [ repo1 ] ≡ toMap { a-repo = repo1 }
+      in  assert : Entry repo ≡ { mapKey = "a-repo", mapValue = repo }
 
-in  pack
+in  Entry

@@ -2,8 +2,6 @@ let SoftwareFactory = ../package.dhall
 
 let SFResources = SoftwareFactory.Resources
 
-let mkGitRepository = SFResources.GitRepository.mkGitRepository
-
 let mkGroup = SFResources.Group.mkGroup
 
 let mkProject = SFResources.Project.mkProject

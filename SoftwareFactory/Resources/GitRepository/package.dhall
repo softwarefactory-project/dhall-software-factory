@@ -1,11 +1,11 @@
-{ Type =
+{ Entry =
+    ./Entry.dhall sha256:cf9de1d9597b6e834f32c2c8fb71de02bb12d645380c8a9a47675f068490a1f4
+, Type =
     ./Type.dhall sha256:93cae0002fb70c7ad1d11df2ba24932de09e7f9ba953fa60b15a60b87be74c11
 , default =
-    ./default.dhall sha256:97b25463b8cdc18e78f3eb5dead1bbb66df34917790987c4ae35da1008aa5844
-, mkGitRepository =
-    ./mkGitRepository.dhall sha256:417260f9883e635db89acdbebd5c2d636f6a18f5d85f23f609eaec9d072b59db
+    ./default.dhall sha256:efaeaaae7aedeef8d7797c00be045c80f0bf41fb0e3335bae14578cd292782e5
 , pack =
-    ./pack.dhall sha256:c1d5c8171c07faa73c09a2f2fe29314fdb91034169bc668b8e4e260201b4ae03
+    ./pack.dhall sha256:cfa92f1bbee33dc4e5f0fa04a4ed51ac6d967c5b21424952cbb2c29dc801e596
 , schema =
-    ./schema.dhall sha256:b0731d313320bcc37247c8c19093cc1e9f1d122aa9096c60dd2890f5f2e18344
+    ./schema.dhall sha256:dea87cf6934b04fc4cf626570bc8598e3e96e1430cf28e9d9d7fb213d5e6f0e9
 }
