@@ -82,6 +82,11 @@ resources:
         - core
         - ui
       name: acl-1
+  connections:
+    a-connection1:
+      base-url: https://review.opendev.org
+      name: a-connection1
+      type: gerrit
   groups:
     a-group:
       members:

@@ -5,6 +5,7 @@ let SoftwareFactory =
       , GitRepository = ../GitRepository/package.dhall
       , Group = ../Group/package.dhall
       , GitACL = ../GitACL/package.dhall
+      , Connection = ../Connection/package.dhall
       }
 
 let Prelude = ../Prelude.dhall
@@ -49,6 +50,11 @@ let render =
                 SoftwareFactory.GitACL.Type
                 SoftwareFactory.GitACL.Name
                 resources.acls
+          , connections =
+              mkMap
+                SoftwareFactory.Connection.Type
+                SoftwareFactory.Connection.Name
+                resources.connections
           }
         }
 
