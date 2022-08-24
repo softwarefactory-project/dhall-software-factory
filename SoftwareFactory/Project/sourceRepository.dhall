@@ -1,4 +1,4 @@
-let Prelude = https://prelude.dhall-lang.org/v15.0.0/package.dhall
+let Prelude = ../Prelude.dhall
 
 let SourceRepositoryOptionsValue =
       < TextValue : Text | ListValue : List Text | BoolValue : Bool >
