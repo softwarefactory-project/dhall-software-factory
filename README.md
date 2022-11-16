@@ -62,8 +62,10 @@ let tenant =
       SoftwareFactory.Tenant::{
       , name = "fedora"
       , url = "https://fedora.sf.io"
+      , default-connection = Some "gerrit"
       , tenant-options = Some SoftwareFactory.TenantOptions::{
         , zuul/web-url = Some "https://fedora.sf.io/zuul"
+        , zuul/max-job-timeout = Some 10800
         }
       }
 
@@ -122,8 +124,10 @@ resources:
       name: a-repo
   tenants:
     fedora:
+      default-connection: gerrit
       name: fedora
       tenant-options:
+        zuul/max-job-timeout: 10800
         zuul/web-url: https://fedora.sf.io/zuul
       url: https://fedora.sf.io
 
