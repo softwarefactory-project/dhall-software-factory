@@ -1,1 +1,5 @@
-{ Type = ./Type.dhall, gerrit = ./gerrit.dhall, pagure = ./pagure.dhall }
+{ Type = ./Type.dhall
+, gerrit = ./gerrit.dhall
+, git = ./git.dhall
+, pagure = ./pagure.dhall
+}

@@ -1,1 +1,1 @@
-< gerrit | pagure | github >
+< gerrit | pagure | github | git >
