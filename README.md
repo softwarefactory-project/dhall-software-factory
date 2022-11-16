@@ -16,11 +16,19 @@ let repo2 =
         SoftwareFactory.SourceRepository::{ zuul/include = Some [ "job" ] }
         "repo2"
 
+let repo3 =
+      SoftwareFactory.SourceRepository.WithOptions
+        SoftwareFactory.SourceRepository::{
+        , zuul/config-project = Some True
+        , connection = Some "gerrit"
+        }
+        "repo3"
+
 let project =
       SoftwareFactory.Project::{
       , name = "tdpw"
       , connection = "github.com"
-      , source-repositories = Some [ repo1, repo2 ]
+      , source-repositories = Some [ repo1, repo2, repo3 ]
       }
 
 let repo =
@@ -102,6 +110,9 @@ resources:
         - repo2:
             zuul/include:
               - job
+        - repo3:
+            connection: gerrit
+            zuul/config-project: true
   repos:
     a-repo:
       branches:
